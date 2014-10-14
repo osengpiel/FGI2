@@ -1,0 +1,30 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+
+\usepackage{latexsym}
+
+\title{FGI2 Übungen Blatt 1}
+
+\author{Oliver Sengpiel, 6322763 \\
+	Daniel Speck, 63XXXXX \\
+	Daniel Krempels, 6YYYYYY}
+
+\begin{document}
+
+\maketitle
+
+\section{1.3}
+\subsection{1.3.1}
+$L(A_n)$ als regulärer Ausdruck: \\
+$L(A_n) = (a^{2i}\cdot c\cdot b^{2i}) + (a^{2i-1}\cdot d\cdot b^{2i-1}) +
+(a^{n}\cdot d) + (d)$ mit $i \in \{1, \dots, \frac{n}{2} \}$
+
+\end{document}
+
+% d acb aadbb aaacbbb ... aaaaaaaaaa//aaaaad
+% a^2i d b^2i + a^2i+1 c b^2i+1 + a^n d
