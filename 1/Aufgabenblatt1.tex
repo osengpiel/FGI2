@@ -36,7 +36,12 @@ Alle vom Automaten akzeptierten Wörter sind in $L(A_n)$ enthalten. Sei $w \in M
 
 \subsection{1.3.4}
 
-Sei $w \in L(A_n)$. Sei w der Form $(a^{2i}\cdot c\cdot b^{2i})$. 
+$L(A_n)$ ist regulär. Denn in der akzeptierten Sprache ist festgelegt, dass kein Wort länger als $n + 1, n$ Anzahl der Zustände sein kann. Damit kann es keine Schleifen in dem Wort geben und das Pumping Lemma nicht widerlegt werden.
+
+ \subsection{1.3.5}
+ 
+ $A = \bigcup_{n \geq 0} L(A_n)$ . Nun ist gegeben, dass n beliebig ist. Damit A regulär ist, und also von einem endlichen Automaten akzeptiert wird, muss es eine Schleife in einem Wort $w \in (a^{2i}\cdot c\cdot b^{2i})$ geben, bei dem $i \g n, n$ Anzahl der Zustände des Automaten. 
+ 
 
 \end{document}
 
