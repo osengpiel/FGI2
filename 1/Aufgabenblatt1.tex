@@ -63,7 +63,15 @@ Pumping Lemma nicht widerlegt werden.
 ist. Damit A regulär ist, und also von einem endlichen Automaten
 akzeptiert wird, muss es eine Schleife in einem Wort $w \in
 (a^{2i}\cdot c\cdot b^{2i})$ geben, bei dem $i > n, n$ Anzahl der
-Zustände des Automaten. 
+Zustände des Automaten. Doch sobald eine Schleife in dem Wort auftritt, 
+wird das Wort nicht mehr akzeptiert, da zum Beispiel nicht mehr garantiert werden kann, dass genau so viele 'a's wie 'b's gelesen werden , oder dass nur ein 'c' oder ein 'd' gelesen wird. Damit ist die Vereinigung aller $L(A_n)$ für $n \geq 0$ nicht regulär. 
+
+ $A = \bigcup_{n \geq 0} L(A_n)$ ist aber kontextfrei, denn es lässt sich eine Grammatik dazu aufstellen:
+\begin{align*}
+ S &\rightarrow A | B \\
+ A &\rightarrow aaAbb | acb | d \\
+ B &\rightarrow aaB | d 
+\end{align*}
  
 
 \end{document}
