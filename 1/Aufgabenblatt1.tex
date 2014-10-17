@@ -82,7 +82,11 @@ Sei $A := (Q, \Sigma, \delta, \{q^0\}, F)$.
 Dann ist $ A\textrm' = (Q\textrm', \Sigma\textrm', 
 \delta\textrm', \{q\textrm'^0\},F\textrm')
 $ mit $ Q\textrm' = Q, \Sigma\textrm' = \Sigma, 
- \delta\textrm' = , \{q\textrm'^0\}= \{F\} $ und $  F\textrm' = \{q^0\} $  
+ \delta\textrm' = , \{q\textrm'^0\}= \{F\} $ und $  F\textrm' = \{q^0\} $.
+Alle Zustände, die vorher Endzustände waren, werden nun zu Startzuständen, alle vorherigen Startzustände werden
+zu Endzuständen. Alle Kanten werden umgedreht und anschließend wird der Potenzautomat gebildet, da es bei der
+Umkehr der Kanten dazu kommen kann, dass der Automat nicht-deterministisch ist. 
+  
 
 \subsection{}
 $L(A) =\{e,f\}^*\{eef\}\{e,f\}^*$. Sei M(A) genau die Menge der vom Automaten akzeptierten Wörter. 
