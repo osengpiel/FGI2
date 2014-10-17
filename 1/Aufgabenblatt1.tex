@@ -77,15 +77,27 @@ wird das Wort nicht mehr akzeptiert, da zum Beispiel nicht mehr garantiert werde
  
 \section{}
 \subsection{}
+
+Sei $A := (Q, \Sigma, \delta, \{q^0\}, F)$. 
+Dann ist $ A\textrm' = (Q\textrm', \Sigma\textrm', 
+\delta\textrm', \{q\textrm'^0\},F\textrm')
+$ mit $ Q\textrm' = Q, \Sigma\textrm' = \Sigma, 
+ \delta\textrm' = , \{q\textrm'^0\}= \{F\} $ und $  F\textrm' = \{q^0\} $  
+
 \subsection{}
 $L(A) =\{e,f\}^*\{eef\}\{e,f\}^*$. Sei M(A) genau die Menge der vom Automaten akzeptierten Wörter. 
 
 $L(A) \subseteq M(A)$: L(A) wird von A akzeptiert. Von $ p_0$ aus können sowohl beliebig viele 'f's als auch beliebig viele 'e's akzeptiert werden.  
 Werden nur 'f's gelesen, bleibt der Automat in $p_0$, werden nur 'e's gelesen, geht der Automat erst in den Zustand $p_1$ und 
 dann in den Zustand $p_2$ und liest dort alle weiteren 'e's. Da der Automat vollständig ist, können von jedem Zustand aus 
-'e's und 'f's gelesen werden. Laut L(A) muss danach die Kombination {eef} gelesen werden können. Unabhängig vom Zustand des Automaten vorher geht der Auutomat nun nach $p_3$, den Endzustand.   
+'e's und 'f's gelesen werden. Laut L(A) muss danach die Kombination {$eef$} gelesen werden können. Unabhängig vom Zustand
+ des Automaten vorher geht der Automat nun nach $p_3$, den Endzustand. Hier können nun wieder beliebig viele 'e's und f's geesen werden, also 
+wird L(A) von A azeptiert, und $L(A) \subseteq M(A)$.   
 
-$M(A) \subseteq L(A)$: Alle vom Automaten akzeptierten Wörter liegen in L(A). 
+$M(A) \subseteq L(A)$: Alle vom Automaten akzeptierten Wörter liegen in L(A). Sei $w \ in M(A)$. $w$ kann aus beliebig vielen
+'e's oder 'f's bestehen, mit der Bedinung, dass irgendwo in dem Wort die Abfolge 'eef' vorkommt. Dies ist in L(A) gegeben,
+ damit gilt L(A) = M(A) und L(A) beschreibt genau die Menge der akzptierten Wörter von A. 
+
 
 \end{document}
 
