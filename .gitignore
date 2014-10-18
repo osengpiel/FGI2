@@ -1,4 +1,7 @@
-*.log
-*.aux
-*.pdf
-*.gz
+# ignore all
+*
+
+# whitelist something
+!*.pdf
+!*.tex
+!.gitignore
