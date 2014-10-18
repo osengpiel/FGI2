@@ -105,7 +105,29 @@ $M(A) \subseteq L(A)$: Alle vom Automaten akzeptierten Wörter liegen in L(A). S
 'e's oder 'f's bestehen, mit der Bedinung, dass irgendwo in dem Wort die Abfolge 'eef' vorkommt. Dies ist in L(A) gegeben,
  damit gilt L(A) = M(A) und L(A) beschreibt genau die Menge der akzptierten Wörter von A. 
 
+\subsection{}
+Sei M(B) genau die Menge der vom Automaten B akzeptierten Wörter. Annahme: $L(B) := \{e,f\}^*\{fee\}\{e,f\}^* = M(B)$.
 
+
+$L(B) \subseteq M(B)$: $L(B)$ wird von B akzeptiert. Von $p_3$ aus können sowohl 'e's als auch 'f's gelesen werden. 
+Generell kann von jedem Zustand aus ein 'e' oder ein 'f' gelesen werden, da der Automat vollständig ist. 
+Laut $L(B)$ muss B die Kombination 'fee' an einer Stelle des Worts lesen können. Unabhängig vom Zustand 
+des Automaten wechselt dieser nach Lesen von 'fee' in den Endzustand $\{p_0, p_1, p_2, p_3\}$. Hier 
+können beliebig viele weitere 'e's und 'f's von $L(B)$ gelesen werden, damit akzeptiert der Automat $L(B)$.
+ 
+
+$M(B) \subseteq L(B)$: Jedes Wort $w \in M(B)$ ist auch in $L(B)$. $w$ kann in $p_3$ sowohl mit 
+einem 'e' als auch mit einem 'f' beginnen. Bei fortlaufenden 'e's bleibt der Automat im Startzustand 
+$p_3$, bei fortlaufenden 'f's wechselt DFA B nach $\{p_2, p_3\}$ und verbleibt dort. Wird von dort aus 
+ein 'e' gelesen, wechselt der Automat zu $\{p_1, p_2, p_3\}$. Folgt in $w$ nun ein 'f', springt der 
+Automat zurück nach $\{p_2, p_3\}$. Um zu einem Endzustand zu gelangen, muss $w$ irgendwo im Wort 
+die Folge 'fee' beinhalten, damit der Automat in einen Endzustand wechselt., Da der Automat nur 
+in den Zustanden 'voranschreitet', wenn ein solches Teilwort gelesen wird. $w$ kann also mit beliebig 
+vielen 'e' und 'f's beginnen, muss die Abfolge {fee} beinhalten und kann mit beliebig kombinierten 
+'e's und 'f's enden. Dies etspricht auch L(B), somit wird $w$ von L(B) akzeptiert.
+
+
+ 
 \end{document}
 
 % d acb aadbb aaacbbb ... aaaaaaaaaa//aaaaad a^2i d b^2i + a^2i+1 c
