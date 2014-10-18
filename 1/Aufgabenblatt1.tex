@@ -79,13 +79,13 @@ wird das Wort nicht mehr akzeptiert, da zum Beispiel nicht mehr garantiert werde
 \subsection{}
 
 Sei $A := (Q, \Sigma, \delta, \{q^0\}, F)$. 
-Dann ist $ A\textrm' = (Q\textrm', \Sigma\textrm', 
-\delta\textrm', \{q\textrm'^0\},F\textrm')
-$ mit \[ Q\textrm' = 2^Q, \Sigma\textrm' = \Sigma, 
-\delta\textrm' = , \{q\textrm'^0\}= F,  F\textrm' = \{M \in 2^Q | M \cap q^0 \neq 0\} \] und wir bilden erst
-$K_\delta := \{ (p,x, \delta(p,x)| p \in Q, x \ in \Sigma, \delta(p,x) definiert)\}$,
-bilden $K\textrm' mit (p\textrm',x,p)$ für alle $(p,x,p\textrm') \in K_\delta$ und dann
-$\delta(M,x)= \cup_(z\in M) \{z\textrm' \in Q | (z,x,z\textrm') \in K\textrm'\}$.
+Dann ist \[ A\textrm' = (Q\textrm', \Sigma\textrm', 
+\delta\textrm', \{q^0\textrm'\},F\textrm') \]
+mit \[ Q\textrm' = 2^Q,\]\[ \Sigma\textrm' = \Sigma,\] 
+\[ q^0\textrm' = F,\] \[ F\textrm' = \{M \in 2^Q | M \cap q^0 \neq 0\} \] und wir bilden erst
+\[K_\delta := \{ (p,x, \delta(p,x)~|~p \in Q, x \in \Sigma, \delta(p,x)~ definiert)\},\]
+bilden \[K\textrm'= \{(p\textrm',x,p)~|~ (p,x,p\textrm') \in K_\delta\}\] und dann
+\[\delta(M,x)= \cup_{z\in M} \{z\textrm' \in Q\textrm' | (z,x,z\textrm') \in K\textrm'\}\]
 Alle Zustände, die vorher Endzustände waren, werden nun zu Startzuständen, alle vorherigen Startzustände werden
 zu Endzuständen. Alle Kanten werden umgedreht und anschließend wird der Potenzautomat gebildet, da es bei der
 Umkehr der Kanten dazu kommen kann, dass der Automat nicht-deterministisch ist. 
