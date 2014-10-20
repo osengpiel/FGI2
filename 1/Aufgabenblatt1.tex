@@ -7,6 +7,7 @@
 \usepackage{amsmath}
 
 \usepackage{latexsym}
+\usepackage{graphicx}
 
 \title{FGI2 Übungen Blatt 1}
 
@@ -85,19 +86,26 @@ aaAbb | acb | d \\ B &\rightarrow aaB | d \end{align*}
 \section*{1.4}
 \subsection*{1.4.1}
 
-Sei $A := (Q, \Sigma, \delta, \{q^0\}, F)$.  Dann ist \[ A\textrm' = (Q\textrm',
-\Sigma\textrm', \delta\textrm', \{q^0\textrm'\},F\textrm') \] mit \[ Q\textrm' =
-2^Q,\]\[ \Sigma\textrm' = \Sigma,\] \[ q^0\textrm' = F,\] \[ F\textrm' = \{M \in
-2^Q | M \cap q^0 \neq 0\} \] und wir bilden erst \[K_\delta := \{ (p,x,
-\delta(p,x)~|~p \in Q, x \in \Sigma, \delta(p,x)~ definiert)\},\] bilden
-\[K\textrm'= \{(p\textrm',x,p)~|~ (p,x,p\textrm') \in K_\delta\}\] und dann
-\[\delta(M,x)= \cup_{z\in M} \{z\textrm' \in Q\textrm' | (z,x,z\textrm') \in
-K\textrm'\}\] Alle Zustände, die vorher Endzustände waren, werden nun zu
-Startzuständen, alle vorherigen Startzustände werden zu Endzuständen. Alle
-Kanten werden umgedreht und anschließend wird der Potenzautomat gebildet, da es
-bei der Umkehr der Kanten dazu kommen kann, dass der Automat
-nicht-deterministisch ist. 
-  
+Sei $A := (Q, \Sigma, \delta, \{q^0\}, F)$ ein beliebiger endlicher Automat und
+$A' := (Q', \Sigma', \delta', \{{q'}^0\}, F')$ ein Automat mit $L(A') = \{
+    w^{rev} | w \in L(A)\}$, dann erhalten wir A' durch folgendes Verfahren: \\
+\begin{enumerate}
+\item \underline{Vertauschen des Anfangszustandes mit den Endzuständen:} \\
+    Wir konstruieren zunächst einen NFA, der den Anfangszustand von A als
+    Endzustand hat, und bei dem die Endzustände des Automaten A die
+    Anfangszustände sind.
+\item \underline{Umkehren der Übergangsrelationen:} \\
+    Nun konstruieren wir die Übergangsrelation $\delta'$ mit $\delta' = \{(q,a,p)
+    | (p,a,q) \in \delta \}$. Wir haben die Kanten unseres Automaten also alle
+    umgedreht.
+\item \underline{Erstellen des Potenzautomaten:} \\
+    Um vom NFA wieder auf einen DFA zu kommen konstruieren wir nun den
+    Potenzautomaten. Der Potenzautomat hat nun den alten Anfangszustand von A
+    als Endzustand und einen Anfangszustand $q'$, der für alle Endzustände von A
+    steht.
+\end{enumerate}
+
+Der Automat, den wir erhalten haben ist $A'$.
 
 \subsection*{1.4.2}
 $L(A) =\{e,f\}^*\{eef\}\{e,f\}^*$. Sei M(A) genau die Menge der vom Automaten
@@ -121,9 +129,31 @@ gegeben, damit gilt L(A) = M(A) und L(A) beschreibt genau die Menge der
 akzptierten Wörter von A. 
 
 \subsection*{1.4.3}
+$L(A) = (e + f)* + (eef) + (e + f)*$
+
+\subsection*{1.4.4}
+Zunächst nehmen wir uns den Ausgangsautomaten A: \\
+\begin{center}
+\includegraphics[width=0.4\textwidth]{drawing.png}
+\end{center}
+
+Dann vertauschen wir Anfangs- und Endzustände des Automaten und erhalten
+folgenden Automaten: \\
+\begin{center}
+\includegraphics[width=0.4\textwidth]{drawing22.png}
+\end{center}
+
+Im Schritt danach drehen wir die Übergangsrelation um:\\
+\begin{center}
+\includegraphics[width=0.4\textwidth]{drawing3.png}
+\end{center}
+\dots und sind fertig, da der Potenzautomat dieses Automaten wieder der Automat
+selbst ist.
+
+
+\subsection*{1.4.5}
 Sei M(B) genau die Menge der vom Automaten B akzeptierten Wörter. Annahme: $L(B)
 := \{e,f\}^*\{fee\}\{e,f\}^* = M(B)$.
-
 
 $L(B) \subseteq M(B)$: $L(B)$ wird von B akzeptiert. Von $p_3$ aus können sowohl
 'e's als auch 'f's gelesen werden.  Generell kann von jedem Zustand aus ein 'e'
