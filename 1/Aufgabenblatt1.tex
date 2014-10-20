@@ -21,13 +21,8 @@ Krempels, 6YYYYYY}
 $L(A_n)$ als regulärer Ausdruck:
 \\
 \\
-$L(A_n) = (a^{2i}\cdot d\cdot b^{2i}) + (a^{2i+1}\cdot c\cdot
-b^{2i+1}) + (a^{n}\cdot d) $ mit $i \in \{0, 1, \dots, \frac{n}{2}
-\}$
-\\
-\\
-$= (a^{2i}\cdot d\cdot b^{2i}) + (a^{2i+1}\cdot c\cdot
-b^{2i+1}) + (a^{n}\cdot d)$ mit $i \in \{0, 1, \dots, \frac{n}{2}
+$L(A_n) = (a^{2i}\cdot d\cdot b^{2i}) + (a^{2i-1}\cdot c\cdot
+b^{2i-1}) + (a^{n}\cdot d) + (d) $ mit $i \in \{1, \dots, \frac{n}{2}
 \}$
 
 \subsection*{1.3.2}
@@ -36,7 +31,7 @@ $L(A_n)$ als Menge: \hfill $i \in \mathbb{N}$
 \\
 $L(A_n) = \{ a^{2i} \cdot d \cdot b^{2i} \;|\; 0 \leq i \leq \frac{n}{2} \}
 \cup
-\{ a^{2i+1} \cdot c \cdot b^{2i+1} \;|\; 0 \leq i \leq \frac{n}{2} \}
+\{ a^{2i-1} \cdot c \cdot b^{2i-1} \;|\; 1 \leq i \leq \frac{n}{2} \}
 \cup
 \{ a^n \cdot d \}$
 
@@ -45,104 +40,112 @@ $L(A_n) = \{ a^{2i} \cdot d \cdot b^{2i} \;|\; 0 \leq i \leq \frac{n}{2} \}
 Sei $M(A_n)$ genau die vom Automaten akzeptierte Sprache. \\ $L(A_n)
 \subseteq M(A_n)$: 
 
-$L(A_n)$ wird vom Automaten akzeptiert. Wird vom Startzustand aus eine gerade Anzahl an
-'a's gelesen, so erreicht man einen Zustand $p_i$ mit i mod 4 = 0.
-Von hier aus kann das folgende 'd' gelesen werden, sowie dieselbe
-Anzahl an 'b's wie 'a's, hiermit wird auch der Endzustand $p_1$
-erreicht. Dies gilt auch für $i=0$, hier wird ein einziges 'd' gelesen und man erreicht den Zustand $p_1$. Wird eine ungerade Anzahl an 'a's gelesen, so wird ein
-Zustand $p_i$ mit i mod 4 = 2 erreicht. Von diesen aus kann das
-darauf folgende 'c' gelesen werden und wiederum die selbe Anzahl an
-'b's wie 'a's, und derselbe Endzustand $p_1$ wird erreicht. Somit
-werden alle Eingaben von $L(A_n)$ akzeptiert. \\ $M(A_n) \subseteq
-L(A_n)$: 
+$L(A_n)$ wird vom Automaten akzeptiert. Wird vom Startzustand aus eine gerade
+Anzahl an 'a's gelesen, so erreicht man einen Zustand $p_i$ mit i mod 4 = 0.
+Von hier aus kann das folgende 'd' gelesen werden, sowie dieselbe Anzahl an 'b's
+wie 'a's, hiermit wird auch der Endzustand $p_1$ erreicht. Dies gilt auch für
+$i=0$, hier wird ein einziges 'd' gelesen und man erreicht den Zustand $p_1$.
+Wird eine ungerade Anzahl an 'a's gelesen, so wird ein Zustand $p_i$ mit i mod 4
+= 2 erreicht. Von diesen aus kann das darauf folgende 'c' gelesen werden und
+wiederum die selbe Anzahl an 'b's wie 'a's, und derselbe Endzustand $p_1$ wird
+erreicht. Somit werden alle Eingaben von $L(A_n)$ akzeptiert. \\ $M(A_n)
+\subseteq L(A_n)$: 
 
-Alle vom Automaten akzeptierten Wörter sind in $L(A_n)$ enthalten.
-Sei $w \in M(A_n)$. $w$ kann drei verschiedene Formen haben: 1. $w$ kann aus einer beliebigen, geraden Anzahl an
-'a's, darauf folgend ein 'd' und darauf folgend genau so viele 'b's
-wie 'a's bestehen. In diesem Fall gilt $w \in L(A_n)$. 2. $w$ kann auch aus n 'a', gefolgt von einem 'd' bestehen. In diesem Fall gilt ebenfalls $w \in L(A_n)$. 3. Oder
-$w$ ist aus einer ungeraden Anzahl an 'a's und der gleichen Anzahl
-an 'b's aufgebaut, genau zwischen 'a's und b's ein 'c'. Auch dieses
-$w$ ist in $L(A_n)$ enthalten. Somit sind alle Wörter, die vom
-Automaten gelesen werden können, auch in $L(A_n)$, also gilt:
-$M(A_n) \subset L(A_n)$. 
+Alle vom Automaten akzeptierten Wörter sind in $L(A_n)$ enthalten.  Sei $w \in
+M(A_n)$. $w$ kann drei verschiedene Formen haben: 1. $w$ kann aus einer
+beliebigen, geraden Anzahl an 'a's, darauf folgend ein 'd' und darauf folgend
+genau so viele 'b's wie 'a's bestehen. In diesem Fall gilt $w \in L(A_n)$. 2.
+$w$ kann auch aus n 'a', gefolgt von einem 'd' bestehen. In diesem Fall gilt
+ebenfalls $w \in L(A_n)$. 3. Oder $w$ ist aus einer ungeraden Anzahl an 'a's und
+der gleichen Anzahl an 'b's aufgebaut, genau zwischen 'a's und b's ein 'c'. Auch
+dieses $w$ ist in $L(A_n)$ enthalten. Somit sind alle Wörter, die vom Automaten
+gelesen werden können, auch in $L(A_n)$, also gilt: $M(A_n) \subset L(A_n)$. 
 
 \subsection*{1.3.4}
 
-$L(A_n)$ ist regulär. Denn in der akzeptierten Sprache ist
-festgelegt, dass kein Wort länger als $n + 1, n$ Anzahl der Zustände
-sein kann. Damit kann es keine Schleifen in dem Wort geben und das
-Pumping Lemma nicht widerlegt werden.
-\\ \\
-Außerdem ist $L(A_n)$ ferner natürlich regulär, da diese Sprache von
-einem endlichen Automaten akzeptiert wird und (wie in Teilaufgabe 1.3.1
-geschehen) durch einen regulären Ausdruck beschrieben werden kann.
+$L(A_n)$ ist regulär, da diese Sprache von einem endlichen Automaten akzeptiert
+wird und (wie in Teilaufgabe 1.3.1 geschehen) durch einen regulären Ausdruck
+beschrieben werden kann.
 
 \subsection*{1.3.5}
  
- $A = \bigcup_{n \geq 0} L(A_n)$ . Nun ist gegeben, dass n beliebig
-ist. Damit A regulär ist, und also von einem endlichen Automaten
-akzeptiert wird, muss es eine Schleife in einem Wort $w \in
-(a^{2i}\cdot c\cdot b^{2i})$ geben, bei dem $i > n, n$ Anzahl der
-Zustände des Automaten. Doch sobald eine Schleife in dem Wort auftritt, 
-wird das Wort nicht mehr akzeptiert, da zum Beispiel nicht mehr garantiert werden kann, dass genau so viele 'a's wie 'b's gelesen werden , oder dass nur ein 'c' oder ein 'd' gelesen wird. Damit ist die Vereinigung aller $L(A_n)$ für $n \geq 0$ nicht regulär. 
+$A = \bigcup_{n \geq 0} L(A_n)$ . Nun ist gegeben, dass n beliebig ist. Damit A
+regulär ist, und also von einem endlichen Automaten akzeptiert wird, muss es
+eine Schleife in einem Wort $w \in (a^{2i}\cdot c\cdot b^{2i})$ geben, bei dem
+$i > n, n$ Anzahl der Zustände des Automaten. Doch sobald eine Schleife in dem
+Wort auftritt, wird das Wort nicht mehr akzeptiert, da zum Beispiel nicht mehr
+garantiert werden kann, dass genau so viele 'a's wie 'b's gelesen werden , oder
+dass nur ein 'c' oder ein 'd' gelesen wird. Damit ist die Vereinigung aller
+$L(A_n)$ für $n \geq 0$ nicht regulär. 
 
- $A = \bigcup_{n \geq 0} L(A_n)$ ist aber kontextfrei, denn es lässt sich eine Grammatik dazu aufstellen:
-\begin{align*}
- S &\rightarrow A | B \\
- A &\rightarrow aaAbb | acb | d \\
- B &\rightarrow aaB | d 
-\end{align*}
+$A = \bigcup_{n \geq 0} L(A_n)$ ist aber kontextfrei, denn es lässt sich eine
+Grammatik dazu aufstellen: \begin{align*} S &\rightarrow A | B \\ A &\rightarrow
+aaAbb | acb | d \\ B &\rightarrow aaB | d \end{align*}
  
 \section*{1.4}
 \subsection*{1.4.1}
 
-Sei $A := (Q, \Sigma, \delta, \{q^0\}, F)$. 
-Dann ist \[ A\textrm' = (Q\textrm', \Sigma\textrm', 
-\delta\textrm', \{q^0\textrm'\},F\textrm') \]
-mit \[ Q\textrm' = 2^Q,\]\[ \Sigma\textrm' = \Sigma,\] 
-\[ q^0\textrm' = F,\] \[ F\textrm' = \{M \in 2^Q | M \cap q^0 \neq 0\} \] und wir bilden erst
-\[K_\delta := \{ (p,x, \delta(p,x)~|~p \in Q, x \in \Sigma, \delta(p,x)~ definiert)\},\]
-bilden \[K\textrm'= \{(p\textrm',x,p)~|~ (p,x,p\textrm') \in K_\delta\}\] und dann
-\[\delta(M,x)= \cup_{z\in M} \{z\textrm' \in Q\textrm' | (z,x,z\textrm') \in K\textrm'\}\]
-Alle Zustände, die vorher Endzustände waren, werden nun zu Startzuständen, alle vorherigen Startzustände werden
-zu Endzuständen. Alle Kanten werden umgedreht und anschließend wird der Potenzautomat gebildet, da es bei der
-Umkehr der Kanten dazu kommen kann, dass der Automat nicht-deterministisch ist. 
+Sei $A := (Q, \Sigma, \delta, \{q^0\}, F)$.  Dann ist \[ A\textrm' = (Q\textrm',
+\Sigma\textrm', \delta\textrm', \{q^0\textrm'\},F\textrm') \] mit \[ Q\textrm' =
+2^Q,\]\[ \Sigma\textrm' = \Sigma,\] \[ q^0\textrm' = F,\] \[ F\textrm' = \{M \in
+2^Q | M \cap q^0 \neq 0\} \] und wir bilden erst \[K_\delta := \{ (p,x,
+\delta(p,x)~|~p \in Q, x \in \Sigma, \delta(p,x)~ definiert)\},\] bilden
+\[K\textrm'= \{(p\textrm',x,p)~|~ (p,x,p\textrm') \in K_\delta\}\] und dann
+\[\delta(M,x)= \cup_{z\in M} \{z\textrm' \in Q\textrm' | (z,x,z\textrm') \in
+K\textrm'\}\] Alle Zustände, die vorher Endzustände waren, werden nun zu
+Startzuständen, alle vorherigen Startzustände werden zu Endzuständen. Alle
+Kanten werden umgedreht und anschließend wird der Potenzautomat gebildet, da es
+bei der Umkehr der Kanten dazu kommen kann, dass der Automat
+nicht-deterministisch ist. 
   
 
 \subsection*{1.4.2}
-$L(A) =\{e,f\}^*\{eef\}\{e,f\}^*$. Sei M(A) genau die Menge der vom Automaten akzeptierten Wörter. 
+$L(A) =\{e,f\}^*\{eef\}\{e,f\}^*$. Sei M(A) genau die Menge der vom Automaten
+akzeptierten Wörter. 
 
-$L(A) \subseteq M(A)$: L(A) wird von A akzeptiert. Von $ p_0$ aus können sowohl beliebig viele 'f's als auch beliebig viele 'e's akzeptiert werden.  
-Werden nur 'f's gelesen, bleibt der Automat in $p_0$, werden nur 'e's gelesen, geht der Automat erst in den Zustand $p_1$ und 
-dann in den Zustand $p_2$ und liest dort alle weiteren 'e's. Da der Automat vollständig ist, können von jedem Zustand aus 
-'e's und 'f's gelesen werden. Laut L(A) muss danach die Kombination {$eef$} gelesen werden können. Unabhängig vom Zustand
- des Automaten vorher geht der Automat nun nach $p_3$, den Endzustand. Hier können nun wieder beliebig viele 'e's und f's geesen werden, also 
-wird L(A) von A azeptiert, und $L(A) \subseteq M(A)$.   
+$L(A) \subseteq M(A)$: L(A) wird von A akzeptiert. Von $ p_0$ aus können sowohl
+beliebig viele 'f's als auch beliebig viele 'e's akzeptiert werden.  Werden nur
+'f's gelesen, bleibt der Automat in $p_0$, werden nur 'e's gelesen, geht der
+Automat erst in den Zustand $p_1$ und dann in den Zustand $p_2$ und liest dort
+alle weiteren 'e's. Da der Automat vollständig ist, können von jedem Zustand aus
+'e's und 'f's gelesen werden. Laut L(A) muss danach die Kombination {$eef$}
+gelesen werden können. Unabhängig vom Zustand des Automaten vorher geht der
+Automat nun nach $p_3$, den Endzustand. Hier können nun wieder beliebig viele
+'e's und f's geesen werden, also wird L(A) von A azeptiert, und $L(A) \subseteq
+M(A)$.   
 
-$M(A) \subseteq L(A)$: Alle vom Automaten akzeptierten Wörter liegen in L(A). Sei $w \ in M(A)$. $w$ kann aus beliebig vielen
-'e's oder 'f's bestehen, mit der Bedinung, dass irgendwo in dem Wort die Abfolge 'eef' vorkommt. Dies ist in L(A) gegeben,
- damit gilt L(A) = M(A) und L(A) beschreibt genau die Menge der akzptierten Wörter von A. 
+$M(A) \subseteq L(A)$: Alle vom Automaten akzeptierten Wörter liegen in L(A).
+Sei $w \ in M(A)$. $w$ kann aus beliebig vielen 'e's oder 'f's bestehen, mit der
+Bedinung, dass irgendwo in dem Wort die Abfolge 'eef' vorkommt. Dies ist in L(A)
+gegeben, damit gilt L(A) = M(A) und L(A) beschreibt genau die Menge der
+akzptierten Wörter von A. 
 
 \subsection*{1.4.3}
-Sei M(B) genau die Menge der vom Automaten B akzeptierten Wörter. Annahme: $L(B) := \{e,f\}^*\{fee\}\{e,f\}^* = M(B)$.
+Sei M(B) genau die Menge der vom Automaten B akzeptierten Wörter. Annahme: $L(B)
+:= \{e,f\}^*\{fee\}\{e,f\}^* = M(B)$.
 
 
-$L(B) \subseteq M(B)$: $L(B)$ wird von B akzeptiert. Von $p_3$ aus können sowohl 'e's als auch 'f's gelesen werden. 
-Generell kann von jedem Zustand aus ein 'e' oder ein 'f' gelesen werden, da der Automat vollständig ist. 
-Laut $L(B)$ muss B die Kombination 'fee' an einer Stelle des Worts lesen können. Unabhängig vom Zustand 
-des Automaten wechselt dieser nach Lesen von 'fee' in den Endzustand $\{p_0, p_1, p_2, p_3\}$. Hier 
-können beliebig viele weitere 'e's und 'f's von $L(B)$ gelesen werden, damit akzeptiert der Automat $L(B)$.
+$L(B) \subseteq M(B)$: $L(B)$ wird von B akzeptiert. Von $p_3$ aus können sowohl
+'e's als auch 'f's gelesen werden.  Generell kann von jedem Zustand aus ein 'e'
+oder ein 'f' gelesen werden, da der Automat vollständig ist.  Laut $L(B)$ muss B
+die Kombination 'fee' an einer Stelle des Worts lesen können. Unabhängig vom
+Zustand des Automaten wechselt dieser nach Lesen von 'fee' in den Endzustand
+$\{p_0, p_1, p_2, p_3\}$. Hier können beliebig viele weitere 'e's und 'f's von
+$L(B)$ gelesen werden, damit akzeptiert der Automat $L(B)$.
  
 
-$M(B) \subseteq L(B)$: Jedes Wort $w \in M(B)$ ist auch in $L(B)$. $w$ kann in $p_3$ sowohl mit 
-einem 'e' als auch mit einem 'f' beginnen. Bei fortlaufenden 'e's bleibt der Automat im Startzustand 
-$p_3$, bei fortlaufenden 'f's wechselt DFA B nach $\{p_2, p_3\}$ und verbleibt dort. Wird von dort aus 
-ein 'e' gelesen, wechselt der Automat zu $\{p_1, p_2, p_3\}$. Folgt in $w$ nun ein 'f', springt der 
-Automat zurück nach $\{p_2, p_3\}$. Um zu einem Endzustand zu gelangen, muss $w$ irgendwo im Wort 
-die Folge 'fee' beinhalten, damit der Automat in einen Endzustand wechselt., Da der Automat nur 
-in den Zustanden 'voranschreitet', wenn ein solches Teilwort gelesen wird. $w$ kann also mit beliebig 
-vielen 'e' und 'f's beginnen, muss die Abfolge {fee} beinhalten und kann mit beliebig kombinierten 
-'e's und 'f's enden. Dies etspricht auch L(B), somit wird $w$ von L(B) akzeptiert.
+$M(B) \subseteq L(B)$: Jedes Wort $w \in M(B)$ ist auch in $L(B)$. $w$ kann in
+$p_3$ sowohl mit einem 'e' als auch mit einem 'f' beginnen. Bei fortlaufenden
+'e's bleibt der Automat im Startzustand $p_3$, bei fortlaufenden 'f's wechselt
+DFA B nach $\{p_2, p_3\}$ und verbleibt dort. Wird von dort aus ein 'e' gelesen,
+wechselt der Automat zu $\{p_1, p_2, p_3\}$. Folgt in $w$ nun ein 'f', springt
+der Automat zurück nach $\{p_2, p_3\}$. Um zu einem Endzustand zu gelangen, muss
+$w$ irgendwo im Wort die Folge 'fee' beinhalten, damit der Automat in einen
+Endzustand wechselt., Da der Automat nur in den Zustanden 'voranschreitet', wenn
+ein solches Teilwort gelesen wird. $w$ kann also mit beliebig vielen 'e' und
+'f's beginnen, muss die Abfolge {fee} beinhalten und kann mit beliebig
+kombinierten 'e's und 'f's enden. Dies etspricht auch L(B), somit wird $w$ von
+L(B) akzeptiert.
 
 
  
