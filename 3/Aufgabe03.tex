@@ -1,0 +1,62 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8x]{inputenc}
+\usepackage{ngerman}
+\usepackage{ucs}
+\usepackage[fleqn]{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{totpages}
+\usepackage{cancel} % Kürzen von Brüchen
+
+%\usepackage{breqn} 
+\usepackage{graphicx}
+\usepackage{pdfpages}
+
+\author{Alina Bombeck, Pedram Mehdizadeh Taheri, Sebastian Döbel}
+\title{}
+
+% *** Seitenränder ************************
+\usepackage[left=2.5cm,right=2.0cm,bottom=30mm,top=30mm, headsep=1.5cm]{geometry}	
+
+% Kopf- und Fußzeilen
+\pagestyle{fancy}
+\lhead{Alina Bombeck \\ Pedram Mehdizadeh Taheri \\  Sebastian Döbel}
+\chead{Formale Grundlagen der Informatik - Übungsblatt 2}
+\rhead{4. November 2014}
+\rfoot{Seite \thepage \ von \ref{TotPages}}
+\cfoot{}
+
+% paar shortcuts
+\newcommand{\IN}{\mathbb{N}}
+\newcommand{\f}[2]{\frac {#1} {#2}}
+\renewcommand{\o}{\omega}
+
+\begin{document}
+
+\section {Aufgabe 3.3}
+\subsection {Aufgabe 3.3.1.}
+\[L(A_1)=(a^* +ba^*b)^* (ba^*+\epsilon)\]
+\[L(A_2)=(a^*+ba^*b)^* ba^* \]
+\[L^\o(A_1) = (a^*ba^*b)^\o +ba^\o\]
+\[L^\o(A_2) = a^*((a^*ba^*b)^\o + ba^\o) \]
+
+\subsection{Aufgabe 3.3.2}
+Hier muss noch das lustige Bild rein.
+
+\subsection{Aufgabe 3.3.3}
+\[L(A_3)=(a^*+ba^*b)^*ba^*\]
+\[L^\o(A_3)=(a^*+ba^*b)^*ba^\o\]
+\[L(A_3) = L(A_1)\cap L(A_2) \]
+\[L^\o(A_3) \neq L^\o(A_1)\cap  L^\o(A_2) = (a^*ba^*b)^\o + ba^\o\] 
+
+\subsection{Aufgabe 3.3.4}
+Hier kommt auch son lustiges Bild vom Handy hin.
+
+\subsection{Aufgabe 3.3.5}
+
+\[L(A_4) \neq L(A_1)\cap L(A_2) = \text{HIER MUSS NOCH DER REGULÄRE AUSDRUCK ERZEUGT WERDEN}\]
+\[L^\o(A_4) = = (a^*ba^*b)^\o + ba^\o = L^\o(A_1)\cap L^\o(A_2)\]
+
+
+\end{document}
