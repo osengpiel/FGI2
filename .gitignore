@@ -4,5 +4,7 @@
 # whitelist
 !*/ # directories
 !*.pdf # pdf for krempels
+!*.png
+!*.svg
 !*.tex
 !.gitignore
