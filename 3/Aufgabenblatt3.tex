@@ -5,6 +5,7 @@
 
 \usepackage{amssymb}
 \usepackage{amsmath}
+\usepackage{stmaryrd} % Für \leftrightarroweq
 
 \usepackage{latexsym}
 \usepackage{graphicx}
@@ -22,9 +23,14 @@ Krempels, 6424833}
 \maketitle
 
 \section*{3.3}
-$L(A_1) = ((ba^*b)^*a^*) + (ba^*)$ \\
+$L(A_1) = (a^* + (ba^*b)) + ((a^* + (ba^*b))^* ba^*)$ \\
 $L(A_2) = (a^*ba^*(ba^*b)^*a^*)$ \\
-$L^\omega(A_1) = (ba^\omega) + (a + ba^*b)^\omega$ \\
+$L^\omega(A_1) = (a + ba^*b)^*(ba^\omega) + (a + ba^*b)^\omega$ \\
 $L^\omega(A_2) = a^*b(a^* + (ba^*b))^\omega$ \\
 
+\section*{3.4}
+\underline{Beweis: $TS_s \leftrightarroweq TS_r \Rightarrow TS_r
+\leftrightarroweq TS_s$}\\
+Gegeben sei eine Bisimulationsrelation $\mathcal{B}_s$, so dass $TS_s
+\leftrightarroweq TS_r$ gilt.
 \end{document}
