@@ -1,5 +1,6 @@
 *.swp
 *.aux
+*.log
 
 # Da dieser Gitignorefile auch neue Ordner ignoriert, ändere ich ihn wieder
 # zurück
