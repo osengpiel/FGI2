@@ -25,12 +25,15 @@ Krempels, 6424833}
 \section*{3.3}
 
 	\subsection*{3.3.1}
+
 		$L(A_1) = (a^* + (ba^*b)) + ((a^* + (ba^*b))^* ba^*)$ \\
 		$L(A_2) = (a^*ba^*(ba^*b)^*a^*)$ \\
 		$L^\omega(A_1) = (a + ba^*b)^*(ba^\omega) + (a + ba^*b)^\omega$ \\
 		$L^\omega(A_2) = a^*b(a^* + (ba^*b))^\omega$ \\
 
+
 	\subsection*{3.3.2}
+
 		\begin{center}
 			\begin{tikzpicture}[auto, node distance=2cm,initial text={}]
 			  \node[initial, state]		(qs)				{$qs$};
@@ -46,7 +49,15 @@ Krempels, 6424833}
 			\end{tikzpicture}
 		\end{center}
 
+
 	\subsection*{3.3.3}
+
+		$L(A_3) = (a^* + ba^*b)^* ba^* = L(A_1) \cap L(A_2)$
+		\\
+		\\
+		$L^{\omega}(A_3) = (a^* + ba^*b)^* ba^{\omega} \neq (a^* b a^* b)^{\omega} + (a^* + ba^*b)^{*} ba^{\omega}$  
+		$= L^{\omega}(A_1) \cap L^{\omega}(A_2)$
+
 
 	\subsection*{3.3.4}
 		\begin{center}
@@ -75,6 +86,13 @@ Krempels, 6424833}
 
 	\subsection*{3.3.5}
 
+		$L(A_4) = (a^*ba^*b) + (a^* + ba^*b)^*ba + \epsilon \neq (a^* + ba^*b)^* ba^* = L(A_1) \cap L(A_2)$ 
+		\\
+		\\
+		$L^{\omega}(A_4) = (a^* b a^* b)^{\omega} + (a^* + ba^*b)^{*} ba^{\omega}$  
+		$= L^{\omega}(A_1) \cap L^{\omega}(A_2)$
+
+\newpage
 
 \section*{3.4}
 \underline{Beweis: $TS_s \leftrightarroweq TS_r \Rightarrow TS_r
