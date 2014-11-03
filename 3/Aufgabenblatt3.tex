@@ -23,10 +23,29 @@ Krempels, 6424833}
 \maketitle
 
 \section*{3.3}
-$L(A_1) = (a^* + (ba^*b)) + ((a^* + (ba^*b))^* ba^*)$ \\
-$L(A_2) = (a^*ba^*(ba^*b)^*a^*)$ \\
-$L^\omega(A_1) = (a + ba^*b)^*(ba^\omega) + (a + ba^*b)^\omega$ \\
-$L^\omega(A_2) = a^*b(a^* + (ba^*b))^\omega$ \\
+
+	\subsection*{3.3.1}
+		$L(A_1) = (a^* + (ba^*b)) + ((a^* + (ba^*b))^* ba^*)$ \\
+		$L(A_2) = (a^*ba^*(ba^*b)^*a^*)$ \\
+		$L^\omega(A_1) = (a + ba^*b)^*(ba^\omega) + (a + ba^*b)^\omega$ \\
+		$L^\omega(A_2) = a^*b(a^* + (ba^*b))^\omega$ \\
+
+	\subsection*{3.3.2}
+		\begin{center}
+			\begin{tikzpicture}[auto, node distance=2cm,initial text={}]
+			  \node[initial, state]		(qs)				{$qs$};
+			  \node[state]				(rt) [right of=qs]	{$rt$};
+			  \node[state, accepting]	(pt) [above of=rt]	{$pt$};
+
+			 
+			  \draw          (qs)  edge [->, loop above]              node {a} (qs);
+			  \draw          (qs)  edge [->, bend left]             node {b}    (rt);
+			  \draw			(rt)	edge [->, loop above]			node{a} 	(rt);
+			  \draw 		(rt)	edge [->, bend left]			node{b}		(qs);
+			  \draw			(qs)	edge [->]			node{b} 	(pt);
+			  \draw			(pt)	edge [->, loop above]			node{a} 	(pt);
+			\end{tikzpicture}
+		\end{center}
 
 \section*{3.4}
 \underline{Beweis: $TS_s \leftrightarroweq TS_r \Rightarrow TS_r
