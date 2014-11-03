@@ -32,5 +32,41 @@ $L^\omega(A_2) = a^*b(a^* + (ba^*b))^\omega$ \\
 \underline{Beweis: $TS_s \leftrightarroweq TS_r \Rightarrow TS_r
 \leftrightarroweq TS_s$}\\
 Gegeben sei eine Bisimulationsrelation $\mathcal{B}_s$, so dass $TS_s
-\leftrightarroweq TS_r$ gilt.
+\leftrightarroweq TS_r$ gilt.\\
+Dann gilt:
+\begin{align*}
+&\forall s_0 \in S_s^0 : \exists r_0 \in S_r^0 : (s_0,r_0) \in \mathcal{B}_s \\
+\wedge & \forall r_0 \in S_r^0 : \exists s_0 \in S_s^0 : (s_0,r_0) \in \mathcal{B}_s
+\end{align*}
+Es gibt nun eine Bijektion $\mu : S_s \times S_r \to S_r \times S_{s}$ mit
+$\mu((s,r)) = (r,s)$.
+Es sei nun $\mathcal{B}_r = \mu(\mathcal{B}_s)$ dann gilt auch:
+\begin{align*}
+&\forall r_0 \in S_r^0 : \exists s_0 \in S_s^0 : (r_0,s_0) \in \mathcal{B}_r \\
+\wedge & \forall s_0 \in S_s^0 : \exists r_0 \in S_r^0 : (r_0,s_0) \in
+\mathcal{B}_r
+\end{align*}
+Analog kann man zeigen, dass auch die beiden weiteren Bedingungen für
+Bisimilarität (siehe Definition 2.4 im Skript) durch die Bijektion $\mu$ auch
+für $\mathcal{B}_r$ gelten.
+
+\underline{$TS_1 \leftrightarroweq TS_2$:}\\
+Es existiert die Bisimulationsrelation $\mathcal{B}$ mit
+\[
+    \mathcal{B} = \{ (P_0,Q_0), (P_1,Q_1), (P_2,Q_1), (P_3,Q_2), (P_0,Q_3)\}
+\]
+Aus dem Beweis oben gilt $TS_1 \leftrightarroweq TS_2 \Rightarrow TS_2
+\leftrightarroweq TS_1$.
+
+\underline{$TS_1 \leftrightarroweq TS_3$:}\\
+Die Transitionssysteme sind nicht bisimilar, da Bedingung b) bei dem Paar
+$(P_1,R_1)$ verletzt ist.
+Aus der Transitivität der Bisimilarität (zu $(s,r) \in \mathcal{B}_1$ und $(s,t)
+\in \mathcal{B}_2$ gibt es ein $(r,t) \in \mathcal{B}_3$) folgt, dass $TS_3$
+auch nicht bisimilar zu $TS_2$ ist.
+
+\underline{$TS_1 \leftrightarroweq TS_4$:}\\
+
+
+
 \end{document}
