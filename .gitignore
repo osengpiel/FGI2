@@ -1,3 +1,6 @@
+# ignore all
+*/
+
 # whitelist
 !*/ # directories
 !*.pdf # pdf for krempels

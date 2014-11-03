@@ -23,10 +23,76 @@ Krempels, 6424833}
 \maketitle
 
 \section*{3.3}
-$L(A_1) = (a^* + (ba^*b)) + ((a^* + (ba^*b))^* ba^*)$ \\
-$L(A_2) = (a^*ba^*(ba^*b)^*a^*)$ \\
-$L^\omega(A_1) = (a + ba^*b)^*(ba^\omega) + (a + ba^*b)^\omega$ \\
-$L^\omega(A_2) = a^*b(a^* + (ba^*b))^\omega$ \\
+
+	\subsection*{3.3.1}
+
+		$L(A_1) = (a^* + (ba^*b)) + ((a^* + (ba^*b))^* ba^*)$ \\
+		$L(A_2) = (a^*ba^*(ba^*b)^*a^*)$ \\
+		$L^\omega(A_1) = (a + ba^*b)^*(ba^\omega) + (a + ba^*b)^\omega$ \\
+		$L^\omega(A_2) = a^*b(a^* + (ba^*b))^\omega$ \\
+
+
+	\subsection*{3.3.2}
+
+		\begin{center}
+			\begin{tikzpicture}[auto, node distance=2cm,initial text={}]
+			  \node[initial, state]		(qs)				{$qs$};
+			  \node[state]				(rt) [right of=qs]	{$rt$};
+			  \node[state, accepting]	(pt) [above of=rt]	{$pt$};
+
+			  \draw         (qs)    edge [->, loop above]           node{a} 	(qs);
+			  \draw         (qs)    edge [->, bend left]            node{b}     (rt);
+			  \draw			(rt)	edge [->, loop above]			node{a} 	(rt);
+			  \draw 		(rt)	edge [->, bend left]			node{b}		(qs);
+			  \draw			(qs)	edge [->]						node{b} 	(pt);
+			  \draw			(pt)	edge [->, loop above]			node{a} 	(pt);
+			\end{tikzpicture}
+		\end{center}
+
+
+	\subsection*{3.3.3}
+
+		$L(A_3) = (a^* + ba^*b)^* ba^* = L(A_1) \cap L(A_2)$
+		\\
+		\\
+		$L^{\omega}(A_3) = (a^* + ba^*b)^* ba^{\omega} \neq (a^* b a^* b)^{\omega} + (a^* + ba^*b)^{*} ba^{\omega}$  
+		$= L^{\omega}(A_1) \cap L^{\omega}(A_2)$
+
+
+	\subsection*{3.3.4}
+		\begin{center}
+			\begin{tikzpicture}[auto, node distance=3cm,initial text={}]
+			  \node[initial, state, accepting]		(qs1)						{$qs1$};
+			  \node[state]							(qs2) [right of=qs1]		{$qs2$};
+			  \node[state]							(rt1) [below of=qs1]		{$rt1$};
+			  \node[state]							(rt2) [right of=rt1]		{$rt2$};
+			  \node[state]							(pt2) [above of=qs1]		{$pt2$};
+			  \node[state, accepting]				(pt1) [right of=pt2]		{$pt1$};
+
+			  \draw         (qs1)    edge [->]           			node{b} 	(pt2);
+			  \draw         (pt2)    edge [->, bend left]           node{a} 	(pt1);
+			  \draw         (pt1)    edge [->, bend left]           node{a} 	(pt2);
+			  \draw         (qs1)    edge [->]           			node{a} 	(qs2);
+			  \draw         (qs2)    edge [->, loop above]          node{a} 	(qs2);
+			  \draw         (qs2)    edge [->]           			node{b} 	(rt2);
+			  \draw         (rt2)    edge [->, bend left]           node{b} 	(qs1);
+			  \draw         (qs1)    edge [->, bend left]           node{b} 	(rt2);
+			  \draw         (rt2)    edge [->]           			node{a} 	(rt1);
+			  \draw         (rt1)    edge [->, loop below]          node{a} 	(rt1);
+			  \draw         (rt1)    edge [->]           			node{b} 	(qs1);
+			  \draw         (qs2)    edge [->]           			node{b} 	(pt2);
+			\end{tikzpicture}
+		\end{center}
+
+	\subsection*{3.3.5}
+
+		$L(A_4) = (a^*ba^*b) + (a^* + ba^*b)^*ba + \epsilon \neq (a^* + ba^*b)^* ba^* = L(A_1) \cap L(A_2)$ 
+		\\
+		\\
+		$L^{\omega}(A_4) = (a^* b a^* b)^{\omega} + (a^* + ba^*b)^{*} ba^{\omega}$  
+		$= L^{\omega}(A_1) \cap L^{\omega}(A_2)$
+
+\newpage
 
 \section*{3.4}
 \underline{Beweis: $TS_s \leftrightarroweq TS_r \Rightarrow TS_r
