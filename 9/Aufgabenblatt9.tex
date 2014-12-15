@@ -1,1 +1,76 @@
 \documentclass{article}
+
+\usepackage[ngerman]{babel}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\begin{document}
+
+\section*{Aufgabe 9.4.1}
+\[
+\Delta_{N_{9.4a}} =
+\begin{bmatrix}
+1   &	-1  &	0   &	0   &	0   &	0 \\
+0   &	0   &	1   &	-1  &	0   &	0 \\
+0   &	0   &	-1  &	1   &	0   &	0 \\
+0   &	0   &	0   &	0   &	-1  &	1 \\
+0   &	1   &	0   &	0   &	-1  &	0
+\end{bmatrix}
+\]
+
+\section*{Aufgabe 9.4.2}
+
+\section*{Aufgabe 9.4.3}
+Da es zwei Transitionen gibt, die Marken in das System einspeisen, aber dabei
+keine Entfernen ist die Invariante, die man durch das l"osen des
+Gleichungssystems findet immer 0. Daher ist das Netz strukturell nicht
+beschr"ankt.
+
+\section*{Aufgabe 9.4.4}
+\[
+\Delta_{N_{9.4b}} =
+\begin{bmatrix}
+1   &	-1  &	0   &	0   &	0   &	0 \\
+0   &	0   &	1   &	-1  &	0   &	0 \\
+0   &	0   &	-1  &	1   &	0   &	0 \\
+0   &	0   &	0   &	0   &	-1  &	1 \\
+0   &	1   &	0   &	0   &	-1  &	0 \\
+-1  &	0   &	0   &	0   &	0   &	0 \\
+0   &	-1  &	0   &	0   &	1   &   0 \\
+0   &	0   &	0   &	0   &	1   &   -1\\
+\end{bmatrix}
+\]
+
+\[
+\begin{bmatrix}
+1   &	-1  &	0   &	0   &	0   &	0 \\
+0   &	0   &	1   &	-1  &	0   &	0 \\
+0   &	0   &	-1  &	1   &	0   &	0 \\
+0   &	0   &	0   &	0   &	-1  &	1 \\
+0   &	1   &	0   &	0   &	-1  &	0 \\
+-1  &	0   &	0   &	0   &	0   &	0 \\
+0   &	-1  &	0   &	0   &	1   &   0 \\
+0   &	0   &	0   &	0   &	1   &   -1\\
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+i_0  \\
+i_1  \\
+i_2  \\
+i_3  \\
+i_4  \\
+i_5  \\
+i_6  \\
+i_7  \\
+\end{bmatrix}
+= 0
+\]
+
+Ja, dieses Netz erf"ullt nach dem Satz im Skript die Bedingungen f"ur
+Strukturelle Beschr"anktheit.
+
+\section*{Aufgabe 9.4.5}
+Der Informatiker wollte beim urspr"unglichen Netz darstellen, dass beliebig
+viele Kunden kommen k"onnten und beliebig viele Lieferungen ankommen k"onnten. 
+\end{document}
